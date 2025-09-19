@@ -1,28 +1,19 @@
 <?php
-$host = "localhost";
-$usuario = "root";
-$password = "";
-$base = "mi_vira";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['nombre'];
+    $email = $_POST['email'];
+    $mensaje = $_POST['mensaje'];
 
-$conn = new mysqli($host, $usuario, $password, $base);
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+    $archivo = "contactos.csv";
+
+    $fp = fopen($archivo, "a");
+
+    $linea = '"' . $nombre . '","' . $email . '","' . $mensaje . '"' . "\n";
+
+    fwrite($fp, $linea);
+    fclose($fp);
+
+    header("Location: index.html?enviado=1");
+    exit;
 }
-
-$nombre = $_POST['nombre'];
-$email = $_POST['email'];
-$telefono = $_POST['telefono'];
-$mensaje = $_POST['mensaje'];
-
-$stmt = $conn->prepare("INSERT INTO contactos (nombre, email, telefono, mensaje) VALUES (?, ?, ?, ?)");
-$stmt->bind_param("ssss", $nombre, $email, $telefono, $mensaje);
-
-if($stmt->execute()){
-    echo "Mensaje enviado correctamente.";
-} else {
-    echo "Error: " . $stmt->error;
-}
-
-$stmt->close();
-$conn->close();
 ?>
