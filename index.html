@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi vira</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #B22222;
+            --secondary-color: #DC143C;
+            --background-color: #F5F5DC;
+            --text-color: #333333;
+            --card-bg: #FFF8E1;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 2em 0;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5em 0;
+            text-align: center;
+        }
+
+        .logo {
+            height: 60px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .hero {
+            background: url('franco.jpg') no-repeat center center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin-bottom: 0.2em;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        .section {
+            padding: 4em 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: var(--secondary-color);
+            margin-bottom: 1em;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2em;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--primary-color);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .product-info {
+            padding: 1.5em;
+        }
+
+        .product-info h3 {
+            font-size: 1.5em;
+            margin-top: 0;
+            color: var(--secondary-color);
+        }
+
+        .product-info p {
+            font-size: 0.9em;
+            color: var(--text-color);
+            margin-bottom: 1em;
+        }
+
+        .price {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: block;
+            margin-top: 0.5em;
+        }
+
+        .contact {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2em 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        .contact p {
+            font-size: 1em;
+            margin: 0.3em 0;
+        }
+
+        .contact a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact a:hover {
+            color: var(--card-bg);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="Mi Vira Logo" class="logo">
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Pasión y Perfección en Cada Creación</h1>
+            <p>Descubre el arte detrás de nuestros productos únicos y de alta calidad.</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <h2>Nuestros Productos</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="agenda.jpg" alt="Agenda 2026">
+                    <div class="product-info">
+                        <h3>Agenda 2026</h3>
+                        <p>Una descripción detallada y atractiva de este producto, resaltando sus características y por qué es el favorito de los clientes.</p>
+                        <span class="price">$40.000</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="sticker.png" alt="Stickers">
+                    <div class="product-info">
+                        <h3>Planchas de Stickers</h3>
+                        <p>Descripción de otro producto, enfatizando su proceso de creación y los materiales de alta calidad utilizados.</p>
+                        <span class="price">$12.000</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="agenda 2.jpg" alt="Agenda 2">
+                    <div class="product-info">
+                        <h3>Cuaderno Inteligente</h3>
+                        <p>Descripción de un producto que se puede personalizar, destacando la experiencia única que ofreces al cliente.</p>
+                        <span class="price">$20.000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Contáctanos y Haz tu Pedido</h2>
+            <p>Email: <a href="mailto:montielbenjamin757@gmail.com">montielbenjamin757@gmail.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/5491173604993" target="_blank">+54 9 11 7360 4993</a></p>
+            <p>Síguenos en <a href="https://www.instagram.com/mi.viraa?igsh=YXBtaWEwZGFkOWJr&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | <a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></p>
+        </div>
+    </section>
+
+</body>
+</html>
