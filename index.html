@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi vira</title>
+    <title>Mi Vira</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap" rel="stylesheet">
@@ -41,8 +41,13 @@
         header {
             background: var(--primary-color);
             color: white;
-            padding: 1.5em 0;
-            text-align: center;
+            padding: 1em 0;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
@@ -51,6 +56,55 @@
             object-fit: contain;
         }
 
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .dropbtn i {
+            font-size: 24px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            background-color: var(--card-bg);
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 10;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: var(--text-color);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
+
+        /* Hero */
         .hero {
             background: url('franco.jpg') no-repeat center center/cover;
             height: 50vh;
@@ -188,12 +242,30 @@
         .contact a:hover {
             color: var(--card-bg);
         }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: row-reverse;
+                justify-content: space-between;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
+        <div class="container header-container">
+            <!-- Botón desplegable -->
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="index.html">Inicio</a>
+                    <a href="productos.html">Productos</a>
+                    <a href="comprar.html">Cómo comprar</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+            </div>
+
             <img src="logo.png" alt="Mi Vira Logo" class="logo">
         </div>
     </header>
@@ -245,6 +317,24 @@
             <p>Síguenos en <a href="https://www.instagram.com/mi.viraa?igsh=YXBtaWEwZGFkOWJr&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | <a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></p>
         </div>
     </section>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn') && !event.target.closest('.dropdown-content')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
