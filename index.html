@@ -149,45 +149,53 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0,0,0,0.5);
+            padding-top: 60px;
         }
         .modal-content {
             background-color: #fefefe;
-            margin: 10% auto;
-            padding: 2em;
+            margin: 5% auto;
+            padding: 20px;
             border: 1px solid #888;
             width: 90%;
             max-width: 500px;
             border-radius: 10px;
-            position: relative;
         }
-        .modal-content input, .modal-content textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        .modal-content button {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .modal .close-modal {
-            position: absolute;
-            top: 10px;
-            right: 15px;
+        .close-modal {
+            color: #aaa;
+            float: right;
             font-size: 28px;
             font-weight: bold;
-            color: #333;
+        }
+        .close-modal:hover,
+        .close-modal:focus {
+            color: black;
+            text-decoration: none;
             cursor: pointer;
         }
-
-        @media (max-width: 768px) {
-            .header-container { flex-direction: row; justify-content: space-between; }
+        .modal input[type="text"],
+        .modal input[type="email"],
+        .modal textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
+        .modal button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .modal button:hover {
+            background-color: var(--secondary-color);
+        }
+
     </style>
 </head>
 <body>
@@ -224,7 +232,7 @@
                 <img src="agenda.jpg" alt="Agenda 2026">
                 <div class="product-info">
                     <h3>Agenda 2026</h3>
-                    <p>Una descripción detallada y atractiva de este producto, resaltando sus características y por qué es el favorito de los clientes.</p>
+                    <p>Una descripción detallada y atractiva de este producto.</p>
                     <span class="price">$40.000</span>
                 </div>
             </div>
@@ -232,7 +240,7 @@
                 <img src="sticker.png" alt="Stickers">
                 <div class="product-info">
                     <h3>Planchas de Stickers</h3>
-                    <p>Descripción de otro producto, enfatizando su proceso de creación y los materiales de alta calidad utilizados.</p>
+                    <p>Descripción de otro producto, enfatizando su calidad.</p>
                     <span class="price">$12.000</span>
                 </div>
             </div>
@@ -240,7 +248,7 @@
                 <img src="agenda 2.jpg" alt="Agenda 2">
                 <div class="product-info">
                     <h3>Cuaderno Inteligente</h3>
-                    <p>Descripción de un producto que se puede personalizar, destacando la experiencia única que ofreces al cliente.</p>
+                    <p>Descripción de un producto personalizable.</p>
                     <span class="price">$20.000</span>
                 </div>
             </div>
@@ -253,7 +261,7 @@
         <h2>Contáctanos y Haz tu Pedido</h2>
         <p>Email: <a href="mailto:montielbenjamin757@gmail.com">montielbenjamin757@gmail.com</a></p>
         <p>WhatsApp: <a href="https://wa.me/5491173604993" target="_blank">+54 9 11 7360 4993</a></p>
-        <p>Síguenos en <a href="https://www.instagram.com/mi.viraa?igsh=YXBtaWEwZGFkOWJr&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | <a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></p>
+        <p>Síguenos en <a href="https://www.instagram.com/mi.viraa" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> | <a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></p>
     </div>
 </section>
 
@@ -261,10 +269,10 @@
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal()">&times;</span>
         <h2>Envianos tu mensaje</h2>
-        <form action="guardar_contacto.php" method="POST" id="contactForm">
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <form action="https://formspree.io/f/xeolylll" method="POST" id="contactForm">
+            <input type="text" name="name" placeholder="Tu nombre" required>
             <input type="email" name="email" placeholder="Tu email" required>
-            <textarea name="mensaje" placeholder="Escribe tu mensaje..." rows="5" required></textarea>
+            <textarea name="message" placeholder="Escribe tu mensaje..." rows="5" required></textarea>
             <button type="submit">Enviar</button>
         </form>
     </div>
@@ -288,9 +296,9 @@ function closeModal() {
 }
 
 window.onclick = function(event) {
-    var modal = document.getElementById("contactModal");
+    let modal = document.getElementById("contactModal");
     if (event.target == modal) {
-        closeModal();
+        modal.style.display = "none";
     }
 }
 </script>
