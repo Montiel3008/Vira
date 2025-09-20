@@ -14,124 +14,39 @@
             --text-color: #333333;
             --card-bg: #FFF8E1;
         }
-        body {
-            font-family: 'Lato', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        h1,h2,h3 { font-family: 'Poppins', sans-serif; }
-        .container { width: 90%; max-width: 1200px; margin: auto; padding: 2em 0; }
-        header {
-            background: var(--primary-color);
-            color: white;
-            padding: 1em 0;
-            position: relative;
-            z-index: 20;
-        }
-        .header-container { display: flex; align-items: center; justify-content: space-between; }
-        .logo { height: 60px; max-width: 100%; object-fit: contain; }
-        .dropbtn {
-            background-color: var(--primary-color);
-            color: white;
-            font-size: 24px;
-            border: none;
-            cursor: pointer;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-        .dropbtn i { font-size: 24px; }
-        .side-menu {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: var(--card-bg);
-            overflow-x: hidden;
-            transition: 0.4s;
-            padding-top: 60px;
-            z-index: 30;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-        }
-        .side-menu a {
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2em;
-            color: var(--text-color);
-            display: block;
-            transition: background 0.3s, color 0.3s;
-        }
-        .side-menu a:hover { background-color: var(--secondary-color); color: white; }
-        .side-menu .closebtn {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 30px;
-            cursor: pointer;
-            color: var(--text-color);
-        }
-        .overlay {
-            position: fixed;
-            display: none;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            z-index: 25;
-        }
-        .hero {
-            background: url('franco.jpg') no-repeat center center/cover;
-            height: 50vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.5);
-        }
-        .hero-content { z-index: 1; }
-        .hero-content h1 { font-size: 3em; margin-bottom: 0.2em; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); }
-        .hero-content p { font-size: 1.2em; font-weight: 300; }
-        .section { padding: 4em 0; }
-        .section h2 {
-            text-align: center; font-size: 2.5em; color: var(--secondary-color);
-            margin-bottom: 1em; position: relative;
-        }
-        .section h2::after {
-            content: ''; display: block; width: 60px; height: 4px;
-            background: var(--secondary-color); margin: 10px auto 0; border-radius: 2px;
-        }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2em; }
-        .product-card {
-            background: var(--card-bg); border: 1px solid var(--primary-color);
-            border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
-        .product-card img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--primary-color); }
-        .product-info { padding: 1.5em; }
-        .product-info h3 { font-size: 1.5em; margin-top: 0; color: var(--secondary-color); }
-        .product-info p { font-size: 0.9em; color: var(--text-color); margin-bottom: 1em; }
-        .price { font-size: 1.3em; font-weight: 700; color: var(--secondary-color); display: block; margin-top: 0.5em; }
-        .contact {
-            background-color: var(--primary-color); color: white; padding: 2em 0; text-align: center;
-        }
-        .contact h2 { font-size: 2em; margin-bottom: 0.5em; }
-        .contact p { font-size: 1em; margin: 0.3em 0; }
-        .contact a { color: white; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+        body { font-family: 'Lato', sans-serif; margin:0; padding:0; background-color: var(--background-color); color: var(--text-color); line-height:1.6; }
+        h1,h2,h3 { font-family:'Poppins', sans-serif; }
+        .container { width:90%; max-width:1200px; margin:auto; padding:2em 0; }
+        header { background: var(--primary-color); color:white; padding:1em 0; position:relative; z-index:20; }
+        .header-container { display:flex; align-items:center; justify-content:space-between; }
+        .logo { height:60px; max-width:100%; object-fit:contain; }
+        .dropbtn { background-color: var(--primary-color); color:white; font-size:24px; border:none; cursor:pointer; padding:10px 15px; border-radius:5px; }
+        .dropbtn i { font-size:24px; }
+        .side-menu { height:100%; width:0; position:fixed; top:0; left:0; background-color: var(--card-bg); overflow-x:hidden; transition:0.4s; padding-top:60px; z-index:30; box-shadow:2px 0 10px rgba(0,0,0,0.3); }
+        .side-menu a { padding:15px 30px; text-decoration:none; font-size:1.2em; color: var(--text-color); display:block; transition: background 0.3s, color 0.3s; }
+        .side-menu a:hover { background-color: var(--secondary-color); color:white; }
+        .side-menu .closebtn { position:absolute; top:15px; right:20px; font-size:30px; cursor:pointer; color: var(--text-color); }
+        .overlay { position:fixed; display:none; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.5); z-index:25; }
+        .hero { background:url('franco.jpg') no-repeat center center/cover; height:50vh; display:flex; align-items:center; justify-content:center; color:white; text-align:center; position:relative; }
+        .hero::before { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.5); }
+        .hero-content { z-index:1; }
+        .hero-content h1 { font-size:3em; margin-bottom:0.2em; text-shadow:2px 2px 8px rgba(0,0,0,0.8); }
+        .hero-content p { font-size:1.2em; font-weight:300; }
+        .section { padding:4em 0; }
+        .section h2 { text-align:center; font-size:2.5em; color: var(--secondary-color); margin-bottom:1em; position:relative; }
+        .section h2::after { content:''; display:block; width:60px; height:4px; background: var(--secondary-color); margin:10px auto 0; border-radius:2px; }
+        .product-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2em; }
+        .product-card { background: var(--card-bg); border:1px solid var(--primary-color); border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s ease, box-shadow 0.3s ease; overflow:hidden; cursor:pointer; }
+        .product-card:hover { transform: translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
+        .product-card img { width:100%; height:200px; object-fit:cover; border-bottom:1px solid var(--primary-color); }
+        .product-info { padding:1.5em; }
+        .product-info h3 { font-size:1.5em; margin-top:0; color: var(--secondary-color); }
+        .product-info p { font-size:0.9em; color: var(--text-color); margin-bottom:1em; }
+        .price { font-size:1.3em; font-weight:700; color: var(--secondary-color); display:block; margin-top:0.5em; }
+        .contact { background-color: var(--primary-color); color:white; padding:2em 0; text-align:center; }
+        .contact h2 { font-size:2em; margin-bottom:0.5em; }
+        .contact p { font-size:1em; margin:0.3em 0; }
+        .contact a { color:white; text-decoration:none; font-weight:600; transition: color 0.3s ease; }
         .contact a:hover { color: var(--card-bg); }
     </style>
 </head>
@@ -149,7 +64,7 @@
     <a href="index.html">Inicio</a>
     <a href="productos.html">Productos</a>
     <a href="comprar.html">Cómo comprar</a>
-    <a href="#" onclick="openModal()">Contacto</a>
+    <a href="#" onclick="alert('Aquí abriría tu formulario de contacto')">Contacto</a>
 </div>
 
 <div id="overlay" class="overlay" onclick="closeMenu()"></div>
@@ -169,7 +84,7 @@
                 <img src="agenda.jpg" alt="Agenda 2026">
                 <div class="product-info">
                     <h3>Agenda 2026</h3>
-                    <p>Una descripción breve y atractiva del producto.</p>
+                    <p>Una descripción detallada y atractiva de este producto.</p>
                     <span class="price">$40.000</span>
                 </div>
             </div>
@@ -177,7 +92,7 @@
                 <img src="sticker.png" alt="Planchas de Stickers">
                 <div class="product-info">
                     <h3>Planchas de Stickers</h3>
-                    <p>Descripción breve y atractiva del producto.</p>
+                    <p>Descripción de otro producto, enfatizando su calidad.</p>
                     <span class="price">$12.000</span>
                 </div>
             </div>
@@ -185,7 +100,7 @@
                 <img src="agenda 2.jpg" alt="Cuaderno Inteligente">
                 <div class="product-info">
                     <h3>Cuaderno Inteligente</h3>
-                    <p>Descripción breve y atractiva del producto.</p>
+                    <p>Descripción de un producto personalizable.</p>
                     <span class="price">$20.000</span>
                 </div>
             </div>
@@ -210,9 +125,6 @@ function openMenu() {
 function closeMenu() {
     document.getElementById("mySideMenu").style.width = "0";
     document.getElementById("overlay").style.display = "none";
-}
-function openModal() {
-    alert("Aquí abriría tu formulario de contacto");
 }
 </script>
 
