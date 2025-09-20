@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Vira</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
@@ -14,40 +15,188 @@
             --text-color: #333333;
             --card-bg: #FFF8E1;
         }
-        body { font-family: 'Lato', sans-serif; margin:0; padding:0; background-color: var(--background-color); color: var(--text-color); line-height:1.6; }
-        h1,h2,h3 { font-family:'Poppins', sans-serif; }
-        .container { width:90%; max-width:1200px; margin:auto; padding:2em 0; }
-        header { background: var(--primary-color); color:white; padding:1em 0; position:relative; z-index:20; }
-        .header-container { display:flex; align-items:center; justify-content:space-between; }
-        .logo { height:60px; max-width:100%; object-fit:contain; }
-        .dropbtn { background-color: var(--primary-color); color:white; font-size:24px; border:none; cursor:pointer; padding:10px 15px; border-radius:5px; }
-        .dropbtn i { font-size:24px; }
-        .side-menu { height:100%; width:0; position:fixed; top:0; left:0; background-color: var(--card-bg); overflow-x:hidden; transition:0.4s; padding-top:60px; z-index:30; box-shadow:2px 0 10px rgba(0,0,0,0.3); }
-        .side-menu a { padding:15px 30px; text-decoration:none; font-size:1.2em; color: var(--text-color); display:block; transition: background 0.3s, color 0.3s; }
-        .side-menu a:hover { background-color: var(--secondary-color); color:white; }
-        .side-menu .closebtn { position:absolute; top:15px; right:20px; font-size:30px; cursor:pointer; color: var(--text-color); }
-        .overlay { position:fixed; display:none; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.5); z-index:25; }
-        .hero { background:url('franco.jpg') no-repeat center center/cover; height:50vh; display:flex; align-items:center; justify-content:center; color:white; text-align:center; position:relative; }
-        .hero::before { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.5); }
-        .hero-content { z-index:1; }
-        .hero-content h1 { font-size:3em; margin-bottom:0.2em; text-shadow:2px 2px 8px rgba(0,0,0,0.8); }
-        .hero-content p { font-size:1.2em; font-weight:300; }
-        .section { padding:4em 0; }
-        .section h2 { text-align:center; font-size:2.5em; color: var(--secondary-color); margin-bottom:1em; position:relative; }
-        .section h2::after { content:''; display:block; width:60px; height:4px; background: var(--secondary-color); margin:10px auto 0; border-radius:2px; }
-        .product-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2em; }
-        .product-card { background: var(--card-bg); border:1px solid var(--primary-color); border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s ease, box-shadow 0.3s ease; overflow:hidden; cursor:pointer; }
-        .product-card:hover { transform: translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
-        .product-card img { width:100%; height:200px; object-fit:cover; border-bottom:1px solid var(--primary-color); }
-        .product-info { padding:1.5em; }
-        .product-info h3 { font-size:1.5em; margin-top:0; color: var(--secondary-color); }
-        .product-info p { font-size:0.9em; color: var(--text-color); margin-bottom:1em; }
-        .price { font-size:1.3em; font-weight:700; color: var(--secondary-color); display:block; margin-top:0.5em; }
-        .contact { background-color: var(--primary-color); color:white; padding:2em 0; text-align:center; }
-        .contact h2 { font-size:2em; margin-bottom:0.5em; }
-        .contact p { font-size:1em; margin:0.3em 0; }
-        .contact a { color:white; text-decoration:none; font-weight:600; transition: color 0.3s ease; }
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        h1,h2,h3 { font-family: 'Poppins', sans-serif; }
+        .container { width: 90%; max-width: 1200px; margin: auto; padding: 2em 0; }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1em 0;
+            position: relative;
+            z-index: 20;
+        }
+        .header-container { display: flex; align-items: center; justify-content: space-between; }
+        .logo { height: 60px; max-width: 100%; object-fit: contain; }
+        .dropbtn {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .dropbtn i { font-size: 24px; }
+
+        .side-menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--card-bg);
+            overflow-x: hidden;
+            transition: 0.4s;
+            padding-top: 60px;
+            z-index: 30;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+        }
+        .side-menu a {
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            color: var(--text-color);
+            display: block;
+            transition: background 0.3s, color 0.3s;
+        }
+        .side-menu a:hover { background-color: var(--secondary-color); color: white; }
+        .side-menu .closebtn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+        .overlay {
+            position: fixed;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 25;
+        }
+
+        .hero {
+            background: url('franco.jpg') no-repeat center center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .hero-content { z-index: 1; }
+        .hero-content h1 { font-size: 3em; margin-bottom: 0.2em; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); }
+        .hero-content p { font-size: 1.2em; font-weight: 300; }
+
+        .section { padding: 4em 0; }
+        .section h2 {
+            text-align: center; font-size: 2.5em; color: var(--secondary-color);
+            margin-bottom: 1em; position: relative;
+        }
+        .section h2::after {
+            content: ''; display: block; width: 60px; height: 4px;
+            background: var(--secondary-color); margin: 10px auto 0; border-radius: 2px;
+        }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2em; }
+        .product-card {
+            background: var(--card-bg); border: 1px solid var(--primary-color);
+            border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .product-card img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--primary-color); }
+        .product-info { padding: 1.5em; }
+        .product-info h3 { font-size: 1.5em; margin-top: 0; color: var(--secondary-color); }
+        .product-info p { font-size: 0.9em; color: var(--text-color); margin-bottom: 1em; }
+        .price { font-size: 1.3em; font-weight: 700; color: var(--secondary-color); display: block; margin-top: 0.5em; }
+
+        .contact {
+            background-color: var(--primary-color); color: white; padding: 2em 0; text-align: center;
+        }
+        .contact h2 { font-size: 2em; margin-bottom: 0.5em; }
+        .contact p { font-size: 1em; margin: 0.3em 0; }
+        .contact a { color: white; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
         .contact a:hover { color: var(--card-bg); }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 50;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+        .close-modal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close-modal:hover,
+        .close-modal:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal input[type="text"],
+        .modal input[type="email"],
+        .modal textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .modal button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .modal button:hover {
+            background-color: var(--secondary-color);
+        }
+
     </style>
 </head>
 <body>
@@ -64,7 +213,7 @@
     <a href="index.html">Inicio</a>
     <a href="productos.html">Productos</a>
     <a href="comprar.html">Cómo comprar</a>
-    <a href="#" onclick="alert('Aquí abriría tu formulario de contacto')">Contacto</a>
+    <a href="#" onclick="openModal()">Contacto</a>
 </div>
 
 <div id="overlay" class="overlay" onclick="closeMenu()"></div>
@@ -80,7 +229,7 @@
     <div class="container">
         <h2>Nuestros Productos</h2>
         <div class="product-grid">
-            <div class="product-card" onclick="location.href='producto1.html'">
+            <div class="product-card">
                 <img src="agenda.jpg" alt="Agenda 2026">
                 <div class="product-info">
                     <h3>Agenda 2026</h3>
@@ -88,16 +237,16 @@
                     <span class="price">$40.000</span>
                 </div>
             </div>
-            <div class="product-card" onclick="location.href='producto2.html'">
-                <img src="sticker.png" alt="Planchas de Stickers">
+            <div class="product-card">
+                <img src="sticker.png" alt="Stickers">
                 <div class="product-info">
                     <h3>Planchas de Stickers</h3>
                     <p>Descripción de otro producto, enfatizando su calidad.</p>
                     <span class="price">$12.000</span>
                 </div>
             </div>
-            <div class="product-card" onclick="location.href='producto3.html'">
-                <img src="agenda 2.jpg" alt="Cuaderno Inteligente">
+            <div class="product-card">
+                <img src="agenda 2.jpg" alt="Agenda 2">
                 <div class="product-info">
                     <h3>Cuaderno Inteligente</h3>
                     <p>Descripción de un producto personalizable.</p>
@@ -117,6 +266,20 @@
     </div>
 </section>
 
+<!-- Modal Contacto -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h2>Envianos tu mensaje</h2>
+        <form action="https://formspree.io/f/xeolylll" method="POST" id="contactForm">
+            <input type="text" name="name" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu email" required>
+            <textarea name="message" placeholder="Escribe tu mensaje..." rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+
 <script>
 function openMenu() {
     document.getElementById("mySideMenu").style.width = "250px";
@@ -125,6 +288,21 @@ function openMenu() {
 function closeMenu() {
     document.getElementById("mySideMenu").style.width = "0";
     document.getElementById("overlay").style.display = "none";
+}
+
+function openModal() {
+    document.getElementById("contactModal").style.display = "block";
+}
+function closeModal() {
+    document.getElementById("contactModal").style.display = "none";
+}
+
+// Cerrar modal al hacer clic fuera del contenido
+window.onclick = function(event) {
+    let modal = document.getElementById("contactModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 </script>
 
