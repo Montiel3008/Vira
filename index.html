@@ -248,10 +248,10 @@ transform: translateY(-50%);
 <h2>Nuestros Productos</h2>
 <div class="product-grid">
 <div class="product-card" onclick="openProductDetail('agenda')">
-<img src="agenda.jpg" alt="Agenda 2026">
+<img src="agenda.jpg,agenda2.jpg,agenda3.jpg" alt="Agenda 2026">
 <div class="product-info">
 <h3>Agenda 2026</h3>
-<p>Una descripción detallada y atractiva de este producto.</p>
+<p>Aca piensas tu la descripcion</p>
 <span class="price">$40.000</span>
 </div>
 </div>
@@ -298,22 +298,22 @@ transform: translateY(-50%);
 <div class="container">
 <div class="slider-container">
 <div class="slider">
-<img src="agenda1.jpg" alt="Imagen 1" class="slide active">
-<img src="agenda2.jpg" alt="Imagen 2" class="slide">
-<img src="agenda3.jpg" alt="Imagen 3" class="slide">
+<img src="agenda.jpg" alt="Imagen " class="slide active">
+<img src="agenda2.jpg" alt="Imagen " class="slide">
+<img src="agenda3.jpg" alt="Imagen " class="slide">
 <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
 <span class="next" onclick="changeSlide(1)">&#10095;</span>
 </div>
 <div class="product-info-detail">
 <h2 id="productName">Agenda 2026</h2>
-<p id="productDesc">Una agenda elegante con espacio para organizar tu año de manera efectiva y creativa.</p>
+<p id="productDesc">Aca tambien</p>
 <span class="price" id="productPrice">$40.000</span>
 <form id="shippingForm">
 <input type="text" id="postalCode" placeholder="Código Postal" required>
 <button type="button" onclick="calculateShipping()">Calcular Envío</button>
 <p id="shippingCost"></p>
 </form>
-<a id="buyLink" href="https://www.mercadopago.com.ar" target="_blank"><button class="buy-btn">Comprar</button></a>
+<a id="buyLink" href="https://mpago.la/2rJB1AJ" target="_blank"><button class="buy-btn">Comprar</button></a>
 <br><button onclick="closeProductDetail()" class="buy-btn" style="background-color:#555;margin-top:10px;">Cerrar</button>
 </div>
 </div>
@@ -334,12 +334,13 @@ function openProductDetail(product){
 const detailSection=document.getElementById('productDetail'); detailSection.style.display='block';
 const name=document.getElementById('productName'); const desc=document.getElementById('productDesc'); const price=document.getElementById('productPrice'); const link=document.getElementById('buyLink');
 const slidesElements=document.querySelectorAll('#productDetail .slide'); currentSlides=Array.from(slidesElements);
-if(product==='agenda'){ currentSlides[0].src='agenda1.jpg'; currentSlides[1].src='agenda2.jpg'; currentSlides[2].src='agenda3.jpg'; name.textContent='Agenda 2026'; desc.textContent='Una agenda elegante con espacio para organizar tu año de manera efectiva y creativa.'; price.textContent='$40.000'; link.href='https://www.mercadopago.com.ar'; }
-if(product==='stickers'){ currentSlides[0].src='sticker1.jpg'; currentSlides[1].src='sticker2.jpg'; currentSlides[2].src='sticker3.jpg'; name.textContent='Planchas de Stickers'; desc.textContent='Calidad premium en cada sticker, perfectos para personalizar tus cosas.'; price.textContent='$12.000'; link.href='https://www.mercadopago.com.ar'; }
-if(product==='cuaderno'){ currentSlides[0].src='cuaderno1.jpg'; currentSlides[1].src='cuaderno2.jpg'; currentSlides[2].src='cuaderno3.jpg'; name.textContent='Cuaderno Inteligente'; desc.textContent='Cuaderno personalizable, ideal para organizar tus ideas y notas.'; price.textContent='$20.000'; link.href='https://www.mercadopago.com.ar'; }
+if(product==='agenda'){ currentSlides[0].src='agenda.jpg'; currentSlides[1].src='agenda2.jpg'; currentSlides[2].src='agenda3.jpg'; name.textContent='Agenda 2026'; desc.textContent='Una agenda elegante con espacio para organizar tu año de manera efectiva y creativa.'; price.textContent='$40.000'; link.href='https://mpago.la/2rJB1AJ'; }
+if(product==='stickers'){ currentSlides[0].src='sticker1.jpg'; currentSlides[1].src='sticker2.jpg'; currentSlides[2].src='sticker3.jpg'; name.textContent='Planchas de Stickers'; desc.textContent='Calidad premium en cada sticker, perfectos para personalizar tus cosas.'; price.textContent='$12.000'; link.href='https://mpago.la/2rJB1AJ'; }
+if(product==='cuaderno'){ currentSlides[0].src='cuaderno1.jpg'; currentSlides[1].src='cuaderno2.jpg'; currentSlides[2].src='cuaderno3.jpg'; name.textContent='Cuaderno Inteligente'; desc.textContent='Cuaderno personalizable, ideal para organizar tus ideas y notas.'; price.textContent='$20.000'; link.href='https://mpago.la/2rJB1AJ'; }
 slideIndex=0; showSlide(slideIndex); startAutoSlide();
 }
 function closeProductDetail(){ document.getElementById('productDetail').style.display='none'; clearInterval(slideInterval); }
 </script>
 </body>
 </html>
+
