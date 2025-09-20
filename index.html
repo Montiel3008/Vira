@@ -139,7 +139,6 @@
         .contact a { color: white; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
         .contact a:hover { color: var(--card-bg); }
 
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -266,14 +265,13 @@
     </div>
 </section>
 
-<!-- Modal Contacto -->
 <div id="contactModal" class="modal">
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal()">&times;</span>
         <h2>Envianos tu mensaje</h2>
         <form action="https://formspree.io/f/xeolylll" method="POST" id="contactForm">
             <input type="text" name="name" placeholder="Tu nombre" required>
-            <input type="email" name="email" placeholder="Tu email" required>
+            <input type="email" name="email" placeholder="Telefono" required>
             <textarea name="message" placeholder="Escribe tu mensaje..." rows="5" required></textarea>
             <button type="submit">Enviar</button>
         </form>
@@ -297,7 +295,6 @@ function closeModal() {
     document.getElementById("contactModal").style.display = "none";
 }
 
-// Cerrar modal al hacer clic fuera del contenido
 window.onclick = function(event) {
     let modal = document.getElementById("contactModal");
     if (event.target == modal) {
@@ -308,3 +305,4 @@ window.onclick = function(event) {
 
 </body>
 </html>
+
