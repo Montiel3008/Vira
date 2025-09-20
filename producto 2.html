@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planchas de Stickers - Mi Vira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #B22222;
+            --secondary-color: #DC143C;
+            --background-color: #F5F5DC;
+            --text-color: #333333;
+            --card-bg: #FFF8E1;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        h1,h2,h3 { font-family: 'Poppins', sans-serif; }
+        .container { width: 90%; max-width: 1200px; margin: auto; padding: 2em 0; }
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1em 0;
+            position: relative;
+            z-index: 20;
+        }
+        .header-container { display: flex; align-items: center; justify-content: space-between; }
+        .logo { height: 60px; max-width: 100%; object-fit: contain; }
+        .dropbtn {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .dropbtn i { font-size: 24px; }
+        .side-menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--card-bg);
+            overflow-x: hidden;
+            transition: 0.4s;
+            padding-top: 60px;
+            z-index: 30;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+        }
+        .side-menu a {
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            color: var(--text-color);
+            display: block;
+            transition: background 0.3s, color 0.3s;
+        }
+        .side-menu a:hover { background-color: var(--secondary-color); color: white; }
+        .side-menu .closebtn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+        .overlay {
+            position: fixed;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 25;
+        }
+        .product-container { display: flex; flex-direction: column; align-items: center; gap: 2em; }
+        .slider { position: relative; width: 300px; height: 400px; overflow: hidden; border-radius: 10px; }
+        .slider img { width: 100%; height: 100%; object-fit: contain; display: none; }
+        .slider img.active { display: block; }
+        .arrow {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 40px; height: 40px; background-color: var(--primary-color); color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; font-size: 18px;
+        }
+        .arrow.left { left: -50px; }
+        .arrow.right { right: -50px; }
+        .product-info { text-align: center; }
+        .product-info h2 { font-size: 2em; color: var(--secondary-color); margin-bottom: 0.5em; }
+        .product-info p { margin-bottom: 1em; }
+        .price { font-size: 1.5em; font-weight: bold; color: var(--secondary-color); margin-bottom: 1em; }
+        .shipping { display: flex; flex-direction: column; align-items: center; gap: 0.5em; margin-bottom: 1em; }
+        .shipping input[type="text"] { width: 150px; padding: 5px; border: 1px solid #ccc; border-radius: 5px; }
+        .calculate-btn { background-color: var(--primary-color); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        .calculate-btn:hover { background-color: var(--secondary-color); }
+        .back-btn { position: absolute; top: 20px; left: 20px; background-color: var(--primary-color); color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; }
+        .back-btn:hover { background-color: var(--secondary-color); }
+        .buy-btn { background-color: #00A650; color: white; padding: 12px 25px; font-size: 1em; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; }
+        .buy-btn:hover { background-color: #008540; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-container">
+        <img src="logo.png" alt="Mi Vira Logo" class="logo">
+        <button class="dropbtn" onclick="openMenu()"><i class="fas fa-bars"></i></button>
+    </div>
+</header>
+
+<div id="mySideMenu" class="side-menu">
+    <span class="closebtn" onclick="closeMenu()">&times;</span>
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="comprar.html">Cómo comprar</a>
+    <a href="#" onclick="alert('Aquí abriría tu formulario de contacto')">Contacto</a>
+</div>
+
+<div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+<a href="javascript:history.back()" class="back-btn">Volver</a>
+
+<div class="container product-container">
+    <div class="slider">
+        <img src="sticker1.png" class="active" alt="Planchas de Stickers">
+        <img src="sticker2.png" alt="Planchas de Stickers">
+        <img src="sticker3.png" alt="Planchas de Stickers">
+        <div class="arrow left" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></div>
+        <div class="arrow right" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></div>
+    </div>
+
+    <div class="product-info">
+        <h2>Planchas de Stickers</h2>
+        <p>Descripción completa de las planchas de stickers. Aquí podés agregar todos los detalles que quieras mostrar.</p>
+        <span class="price">$12.000</span>
+
+        <div class="shipping">
+            <label for="postal">Código Postal:</label>
+            <input type="text" id="postal" placeholder="Ej: 1425">
+            <button class="calculate-btn" onclick="calculateShipping()">Calcular envío</button>
+            <p id="shippingCost"></p>
+        </div>
+
+        <a href="https://mpago.la/2vccDiS" target="_blank" class="buy-btn">Comprar con Mercado Pago</a>
+    </div>
+</div>
+
+<script>
+function openMenu() {
+    document.getElementById("mySideMenu").style.width = "250px";
+    document.getElementById("overlay").style.display = "block";
+}
+function closeMenu() {
+    document.getElementById("mySideMenu").style.width = "0";
+    document.getElementById("overlay").style.display = "none";
+}
+
+let slides = document.querySelectorAll('.slider img');
+let currentSlide = 0;
+
+function showSlide(index) {
+    slides.forEach((img, i) => img.classList.remove('active'));
+    slides[index].classList.add('active');
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+function calculateShipping() {
+    const postal = document.getElementById('postal').value;
+    const shippingText = document.getElementById('shippingCost');
+
+    if (!postal) {
+        shippingText.textContent = "Ingresa un código postal válido.";
+        return;
+    }
+
+    let cost = 0;
+    if (postal.startsWith('1')) cost = 1500;
+    else if (postal.startsWith('2')) cost = 2000;
+    else cost = 2500;
+
+    shippingText.textContent = `Costo de envío: $${cost}`;
+}
+</script>
+
+</body>
+</html>
